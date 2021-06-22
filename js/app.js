@@ -111,3 +111,89 @@ tl.from('.header-section__social-wrapper', {
     opacity: 0,
 }, "<");
 
+
+
+//animation on scroll 
+//info section
+gsap.from('.info-level-one-wrapper__content-wrapper', {
+    scrollTrigger: {
+      trigger: ".info-level-one-wrapper__content-wrapper",
+      scrub: false,
+      start: "top center",
+      end: "top center"
+    },
+    opacity: 0,
+    y: -50,
+    duration: 0.5,
+    ease: "none"
+});
+
+gsap.from('.info-level-one-wrapper__img-wrapper', {
+    scrollTrigger: {
+      trigger: ".info-level-one-wrapper__img-wrapper",
+      scrub: false,
+      start: "top center",
+      end: "top center"
+    },
+    opacity: 0,
+    y: 50,
+    duration: 0.5,
+    ease: "none"
+});
+
+gsap.from('.info-level-two-wrapper__img-wrapper', {
+    scrollTrigger: {
+      trigger: ".info-level-two-wrapper__img-wrapper",
+      scrub: false,
+      start: "top center",
+      end: "top center"
+    },
+    opacity: 0,
+    y: 50,
+    duration: 0.5,
+    ease: "none"
+});
+gsap.from('.info-level-two-wrapper__content-wrapper', {
+    scrollTrigger: {
+      trigger: ".info-level-two-wrapper__content-wrapper",
+      scrub: false,
+      start: "top center",
+      end: "top center"
+    },
+    opacity: 0,
+    y: -50,
+    duration: 0.5,
+    ease: "none"
+});
+
+gsap.from('.person-img-wrapper', {
+    scrollTrigger: {
+      trigger: ".slider-wrapper",
+      scrub: false,
+      start: "top center",
+      end: "top center"
+    },
+    opacity: 0,
+    y: 50,
+    duration: 0.5,
+    ease: "none"
+});
+
+
+//imgs scroll efect
+let proxy = { skew: 0 },
+    skewSetter = gsap.quickSetter(".skewElem", "skewY", "deg"), 
+    clamp = gsap.utils.clamp(-2, 2); 
+
+ScrollTrigger.create({
+  onUpdate: (self) => {
+    let skew = clamp(self.getVelocity() / -300);
+    if (Math.abs(skew) > Math.abs(proxy.skew)) {
+      proxy.skew = skew;
+      gsap.to(proxy, {skew: 0, duration: 0.8, ease: "power3", overwrite: true, onUpdate: () => skewSetter(proxy.skew)});
+    }
+  }
+});
+
+gsap.set(".skewElem", {transformOrigin: "top center", force3D: true});
+
