@@ -253,8 +253,8 @@
   position: absolute;
   top: 25%;
   left: 0;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  -webkit-transform: translateX(-110%);
+          transform: translateX(-110%);
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -590,6 +590,12 @@
   margin-right: 10px;
 }
 
+@media (max-width: 480px) {
+  .header-section__animated-content-wrapper span {
+    font-size: 5px;
+  }
+}
+
 .header-section__animated-content-wrapper .static-text {
   position: relative;
   display: -webkit-box;
@@ -601,6 +607,12 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .header-section__animated-content-wrapper .static-text {
+    font-size: 18px;
+  }
 }
 
 .header-section__animated-content-wrapper .static-text::before {
@@ -619,6 +631,12 @@
   margin: 0;
 }
 
+@media (max-width: 480px) {
+  .header-section__animated-content-wrapper .swiper-container {
+    max-height: 20px;
+  }
+}
+
 .header-section__animated-content-wrapper .swiper-container .swiper-wrapper {
   margin: 0;
 }
@@ -630,6 +648,12 @@
 
 .header-section__animated-content-wrapper .swiper-container .swiper-wrapper .swiper-slide .animated-text {
   color: #7e7b7b;
+}
+
+@media (max-width: 480px) {
+  .header-section__animated-content-wrapper .swiper-container .swiper-wrapper .swiper-slide .animated-text {
+    font-size: 18px;
+  }
 }
 
 .header-section__animated-arrow-wrapper {
@@ -1730,10 +1754,16 @@
   font-size: 30px;
   text-decoration: none;
   color: #fff;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .footer-section__content-wrapper .social-wrapper .social--item:nth-child(1) {
   margin-right: 20px;
+}
+
+.footer-section__content-wrapper .social-wrapper .social--item:hover {
+  color: #1d27e2;
 }
 
 .footer-section__content-wrapper .policy-wrapper .policy-content {
@@ -1747,7 +1777,7 @@
 }
 
 .footer-section__content-wrapper .policy-wrapper .policy-content .author-mail:hover {
-  color: #5a76c2;
+  color: #1d27e2;
 }
 
 body, html {

@@ -114,11 +114,16 @@
             font-family: $content-font;
             font-size: 24px;
             margin-right: 10px;
-            
+            @include smaller-than-480 {
+                font-size: 5px;
+            }
         }
         .static-text {
             position: relative;
             @include center();
+            @include smaller-than-480 {
+                font-size: 18px;
+            }
             &::before {
                 position: absolute;
                 content: '';
@@ -127,11 +132,15 @@
                 background: $font-color-white;
                 left: -90%;
                 animation: animated-line 3.3s linear infinite;
+                
             }
         }
         .swiper-container {
             max-height: 25px;
             margin: 0;
+            @include smaller-than-480 {
+                max-height: 20px;
+            }
             .swiper-wrapper {
                 margin: 0;
                 .swiper-slide {
@@ -139,6 +148,9 @@
                     color: $font-color-white;
                     .animated-text {
                         color: #7e7b7b;
+                        @include smaller-than-480 {
+                            font-size: 18px;
+                        }
                     }
                 }
             }

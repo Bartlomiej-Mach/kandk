@@ -14,8 +14,12 @@
                 font-size: 30px;
                 text-decoration: none;
                 color: $font-color-white;
+                transition: .2s;
                 &:nth-child(1) {
                     margin-right: 20px;
+                }
+                &:hover {
+                    color: rgb(29, 39, 226);
                 }
             }
         }
@@ -28,7 +32,7 @@
                     color: $font-color-white;
                     text-decoration: none;
                     &:hover {
-                        color: rgb(90, 118, 194);
+                        color: rgb(29, 39, 226);
                     }
                 }
             }
