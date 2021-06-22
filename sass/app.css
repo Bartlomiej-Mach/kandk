@@ -709,23 +709,23 @@
 
 @-webkit-keyframes loading-out {
   from {
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
   }
   to {
-    -webkit-transform: scaleX(0%);
-            transform: scaleX(0%);
+    transform: scaleX(0%);
+    -webkit-transform: scaleX(0);
   }
 }
 
 @keyframes loading-out {
   from {
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
   }
   to {
-    -webkit-transform: scaleX(0%);
-            transform: scaleX(0%);
+    transform: scaleX(0%);
+    -webkit-transform: scaleX(0);
   }
 }
 

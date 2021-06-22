@@ -191,7 +191,9 @@
 @keyframes loading-out {
     from {
         transform: scaleX(100%);
+        -webkit-transform: scaleX(1);
     } to {
         transform: scaleX(0%);
+        -webkit-transform: scaleX(0);
     }
 }
