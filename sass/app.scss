@@ -1,0 +1,47 @@
+@import "./scss-files/variables/variables";
+@import "./scss-files/respond-variables/respond";
+@import "./scss-files/section-navigation/section-navigation";
+@import "./scss-files/section-home/section-home";
+@import "./scss-files/section-main/section-main";
+@import "./scss-files/section-contact/section-contact";
+@import "./scss-files/section-footer/section-footer";
+
+body, html {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #000;
+    position: relative;
+    @include center-column();
+    scroll-behavior: smooth;
+    color: $font-color-white;
+}
+
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    font-family: $heading-font;
+
+}
+p {
+    font-family: $content-font;
+}
+
+
+body::-webkit-scrollbar {
+    width: 5px;
+    background: $font-color-black;
+  }
+body::-webkit-scrollbar-thumb {
+    background: $font-color-white;
+    
+}

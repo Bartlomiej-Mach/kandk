@@ -1,0 +1,209 @@
+.navigation-section {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    z-index: 10;
+    @include center-between();
+    background: #0f101481;
+    @include bigscreen {
+        @include center();
+    }
+    &__left-side {
+        @include center();
+        @include bigscreen {
+            width: 910px;
+            @include center-left();
+        }
+        .logo-wrapper {
+            z-index: 10;
+            .logo {
+                font-family: $header-font;
+                font-size: 30px;
+                color: $font-color-white;
+                text-decoration: none;
+            }
+            .logo--active {
+                color: $font-color-black;
+            }
+        }
+    }
+    &__right-side {
+        @include center();
+        position: relative;
+        @include bigscreen {
+            width: 910px;
+            @include center-right();
+        }
+        .hamburger-menu {
+            padding: 5px;
+            width: 40px;
+            background: transparent;
+            border: none;
+            @include center-space();
+            cursor: pointer;
+            z-index: 10;
+            .line__inner {
+                display: inline-block;
+                width: 2px;
+                height: 30px;
+                background: $font-color-white;
+                position: relative;
+                @include center();
+                &::before {
+                    width: 6px;
+                    height: 6px;
+                    border: 1px solid $font-color-white;
+                    content: '';
+                    background: black;
+                    position: absolute;
+                    transition: .2s;
+                }
+                &:nth-child(1)::before {
+                    top: 15%;
+                }
+                &:nth-child(2)::before {
+                    top: 70%;
+                }
+                &:nth-child(3)::before {
+                    top: 40%;
+                }
+            }
+            &:hover .line__inner:nth-child(1)::before {
+                top: 70%;
+            }
+            &:hover .line__inner:nth-child(2)::before {
+                top: 20%;
+            }
+            &:hover .line__inner:nth-child(3)::before {
+                top: 10%;
+            }
+            .line__inner--active {
+                background: $font-color-black;
+                &::before { 
+                    background: $font-color-white;
+                    border: 1px solid $font-color-black;
+                }
+            }
+        }
+
+        .list-wrapper {
+            position: fixed;
+            width: 0;
+            height: 100vh;
+            background: $font-color-white;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            @include center();
+            overflow: hidden;
+            transition: 0.5s;
+            .nav-list {
+                .list--item {
+                    opacity: 0;
+                    @include center();
+                    position: relative;
+                    overflow: hidden;
+                    .list-link {
+                        font-family: $heading-font;
+                        text-transform: uppercase;
+                        font-size: 42px;
+                        color: $font-color-black;
+                        text-decoration: none;
+                        transition: .3s;
+                        margin-bottom: 30px;
+                        @include smaller-than-480 {
+                            font-size: 30px;
+                        }
+                        
+                    }
+                    &::before {
+                        width: 100%;
+                        height: 2px;
+                        background: $font-color-black;
+                        content: '';
+                        position: absolute;
+                        top: 25%;
+                        left: 0;
+                        transform: translateX(-100%);
+                        transition: .2s;
+                    }
+                    &:hover::before {
+                        transform: translateX(0);
+                    }
+                    &:nth-child(1){
+                        animation-delay: .8s;
+                    }
+                    &:nth-child(2){
+                        animation-delay: 1s;
+                    }
+                    &:nth-child(3){
+                        animation-delay: 1.2s;
+                    }
+                    &:nth-child(4){
+                        animation-delay: 1.4s;
+                    }
+                }
+                .list--item--active {
+                    animation: opacityUp 0.4s forwards 1s;
+                }
+            }
+            .back-nav {
+                background: transparent;
+                border: none;
+                position: absolute;
+                font-family: $heading-font;
+                font-size: 20px;
+                bottom: 10%;
+                color: $font-color-black;
+                transition: .2s;
+                opacity: 0;
+                cursor: pointer;
+                &:hover {
+                    color: rgb(29, 39, 226);
+                }
+            }
+            .back-nav--active {
+                animation: opacityUp 0.4s forwards 1.6s;
+            }
+
+            .nav-social-wrapper {
+                @include center();
+                position: absolute;
+                bottom: 20px;
+                opacity: 0;
+                .social--item {
+                    color: $font-color-black;
+                    text-decoration: none;
+                    font-size: 30px;
+                    transition: .2s;
+                    &:first-child {
+                        margin-right: 30px;
+                        font-size: 26px;
+                    }
+                    &:hover {
+                        color: rgb(29, 39, 226);
+                    }
+                }
+            }
+            .nav-social-wrapper--active {
+                animation: opacityUp 0.4s forwards 1.7s;
+            }
+            
+        }
+        .list-wrapper--active {
+            width: 100%;
+            opacity: 1;
+        }
+    }
+    
+}
+
+@keyframes opacityUp {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}

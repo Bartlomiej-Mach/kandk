@@ -1,0 +1,197 @@
+.header-section {
+    width: 100%;
+    min-height: 100vh;
+    @include center-column();
+    position: relative;
+    overflow: hidden;
+    &__loading-animation {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        @include center-column();
+        z-index: 100;
+        background: #0f1014;
+        top: 0;
+        left: 0;
+        &::before {
+            width: 90%;
+            height: 85%;
+            content: '';
+            position: absolute;
+            z-index: -1;
+            background: #17181f;
+            transform-origin: right;
+            animation: loading-out 1s ease-in forwards 1s;
+        }
+        .main-text {
+            font-size: 42px;
+            letter-spacing: 0.1em;
+            @include smaller-than-480 {
+                font-size: 35px;
+            }
+            @include smaller-than-425 {
+                font-size: 30px;
+            }
+        }
+        .description {
+            font-family: $italic-font;
+            letter-spacing: 0.21em;
+            font-size: 20px;
+            @include smaller-than-425 {
+                font-size: 15px;
+            }
+        }
+    }
+    &__bg-img {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        background: #0f1014;
+        background-position: 50% 50%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        opacity: 0.7;
+    }
+
+    &__heading-wrapper {
+        @include center-column();
+        max-height: 600px;
+        z-index: 1;
+        .heading-level {
+            max-width: 600px;
+            width: 600px;
+            @include center-space();
+            @include smaller-than-1050 {
+                max-width: 400px;
+            }
+            @include smaller-than-600 {
+                max-width: 300px;
+            }
+            @include smaller-than-480 {
+                max-width: 200px;
+            }
+            .heading--item {
+                font-family: $header-font;
+                font-size: 6vw;
+                padding: 0;
+                margin: 0;
+            }
+        }
+        
+        
+    }
+    &__social-wrapper {
+        @include center-column();
+        position: absolute;
+        right: 15px;
+        @include smaller-than-800 {
+            display: none;
+        }
+        .social--item {
+            color: $font-color-white;
+            text-decoration: none;
+            font-size: 30px;
+            transition: .2s;
+            &:first-child {
+                margin-bottom: 25px;
+            }
+            &:hover {
+                color: rgb(29, 39, 226);
+            }
+        }
+    }
+
+    &__animated-content-wrapper {
+        position: absolute;
+        width: 100%;
+        bottom: 20%;
+        @include center-right();
+        padding: 0 20%;
+        span {
+            font-family: $content-font;
+            font-size: 24px;
+            margin-right: 10px;
+            
+        }
+        .static-text {
+            position: relative;
+            @include center();
+            &::before {
+                position: absolute;
+                content: '';
+                width: 15px;
+                height: 2px;
+                background: $font-color-white;
+                left: -90%;
+                animation: animated-line 3.3s linear infinite;
+            }
+        }
+        .swiper-container {
+            max-height: 25px;
+            margin: 0;
+            .swiper-wrapper {
+                margin: 0;
+                .swiper-slide {
+                    margin: 0;
+                    color: $font-color-white;
+                    .animated-text {
+                        color: #7e7b7b;
+                    }
+                }
+            }
+        }
+    }
+    &__animated-arrow-wrapper {
+        position: absolute;
+        bottom: 25px;
+        font-family: $content-font;
+        @include center();
+        background: $font-color-white;
+        .scroll-text {
+            text-decoration: none;
+            color: $font-color-white;
+            transition: .2s;
+        }
+        &::before {
+            content: '';
+            bottom: -22px;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            clip-path: polygon(50% 50%, 0 0, 100% 0);
+            background: $font-color-white;
+        }
+        &:hover .scroll-text {
+            transform: translateY(-10px);
+        }
+    }
+}
+
+
+@keyframes animated-line {
+    0% {
+        width: 0;
+        transform-origin: left center;
+    }
+    95% {
+        width: 15px;
+    }
+    96% {
+        transform-origin: right center;
+    } 
+    100% {
+        width: 0;
+    }
+}
+
+
+@keyframes loading-out {
+    from {
+        transform: scaleX(100%);
+    } to {
+        transform: scaleX(0%);
+    }
+}

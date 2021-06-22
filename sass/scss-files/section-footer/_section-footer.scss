@@ -1,0 +1,37 @@
+.footer-section {
+    width: 100%;
+    background: $background-color-2;
+    @include center();
+    padding: 30px 0;
+    &__content-wrapper {
+        
+        width: 77%;
+        max-width: 1109px;
+        @include center-column();
+        .social-wrapper {
+            margin-bottom: 20px;
+            .social--item {
+                font-size: 30px;
+                text-decoration: none;
+                color: $font-color-white;
+                &:nth-child(1) {
+                    margin-right: 20px;
+                }
+            }
+        }
+        .policy-wrapper {
+
+            .policy-content {
+                font-family: $content-font;
+                font-size: 14px;
+                .author-mail {
+                    color: $font-color-white;
+                    text-decoration: none;
+                    &:hover {
+                        color: rgb(90, 118, 194);
+                    }
+                }
+            }
+        }
+    }
+}
