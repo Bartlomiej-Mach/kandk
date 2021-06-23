@@ -101,6 +101,12 @@
 
                     .level-one-img {
                         animation: zoomInOut 15s linear infinite;
+                        
+                    }
+                    .img-2 {
+                        @include smaller-than-800 {
+                            display: none;
+                        }
                     }
                 }   
             }

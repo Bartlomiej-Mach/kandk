@@ -962,6 +962,12 @@
           animation: zoomInOut 15s linear infinite;
 }
 
+@media (max-width: 800px) {
+  .main-section__content-container .info-level-one-wrapper__img-wrapper .img-box .img-2 {
+    display: none;
+  }
+}
+
 .main-section__content-container .info-level-two-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
