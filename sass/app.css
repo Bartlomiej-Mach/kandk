@@ -1590,6 +1590,8 @@
   font-family: "Questrial", sans-serif;
   color: #fff;
   font-size: 35px;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 @media (max-width: 1350px) {
@@ -1613,6 +1615,10 @@
 
 .contact-section__content-wrapper .phone-wrapper--phone-box .phone-link i {
   margin-bottom: 15px;
+}
+
+.contact-section__content-wrapper .phone-wrapper--phone-box .phone-link:hover {
+  background: rgba(77, 76, 76, 0.521);
 }
 
 @-webkit-keyframes blurOutZoom {

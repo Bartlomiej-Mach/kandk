@@ -94,6 +94,7 @@
                     font-family: $content-font;
                     color: $font-color-white;
                     font-size: 35px;
+                    transition: .2s;
                     @include smaller-than-1350 {
                         background: rgba(0, 0, 0, 0.521);
                         padding: 10px;
@@ -106,6 +107,9 @@
                     }
                     i {
                         margin-bottom: 15px;
+                    }
+                    &:hover {
+                        background: rgba(77, 76, 76, 0.521);
                     }
                 }
             }
